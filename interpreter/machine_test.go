@@ -91,10 +91,8 @@ func TestPutChar(t *testing.T) {
 		int('E'),
 		int('F'),
 	}
-
-	for i, value := range setupMemory {
-		m.memory[i] = value
-	}
+	
+	copy(m.memory[0:len(setupMemory)], setupMemory)
 
 	m.Execute()
 
